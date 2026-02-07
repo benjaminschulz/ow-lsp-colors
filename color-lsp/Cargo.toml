@@ -1,5 +1,5 @@
 [package]
-name = "color-lsp"
+name = "ow-lsp-colors"
 description = "A document color language server that supports various color formats, such as HEX, RGB, HSL, and named colors."
 license = "MIT"
 version = "0.2.2"

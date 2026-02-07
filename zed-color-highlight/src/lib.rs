@@ -1,14 +1,14 @@
 use std::fs;
 use zed_extension_api::{self as zed, Result};
 
-const GITHUB_REPO: &str = "huacnlee/color-lsp";
+const GITHUB_REPO: &str = "benjaminschulz/ow-lsp-colors";
 
 #[inline]
 fn bin_name() -> &'static str {
     if zed::current_platform().0 == zed::Os::Windows {
-        "color-lsp.exe"
+        "ow-lsp-colors.exe"
     } else {
-        "color-lsp"
+        "ow-lsp-colors"
     }
 }
 
@@ -91,7 +91,7 @@ impl ColorHighlightExtension {
         )?;
 
         let asset_name = format!(
-            "color-lsp-{os}-{arch}.{ext}",
+            "ow-lsp-colors-{os}-{arch}.{ext}",
             arch = match arch {
                 zed::Architecture::Aarch64 => "arm64",
                 zed::Architecture::X86 => "amd64",
@@ -113,7 +113,7 @@ impl ColorHighlightExtension {
             _ => zed::DownloadedFileType::GzipTar,
         };
 
-        let version_dir = format!("color-lsp-{}", release.version);
+        let version_dir = format!("ow-lsp-colors-{}", release.version);
         let bin_name = bin_name();
         let version_binary_path = format!("{version_dir}/{bin_name}");
 

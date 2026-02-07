@@ -1,10 +1,10 @@
-id = "color-highlight"
-name = "Color Highlight"
-description = "Highlight colors in your editor based on color-lsp."
-version = "0.2.2"
+id = "ow-lsp-colors"
+name = "OW LSP Colors"
+description = "Highlight colors inline in your editor. Fork of color-highlight with extended language support."
+version = "0.3.0"
 schema_version = 1
-authors = ["Jason Lee <huacnlee@gmail.com>"]
-repository = "https://github.com/huacnlee/color-lsp/tree/main/zed-color-highlight"
+authors = ["Benjamin Schulz <benjamin@omniwerk.de>"]
+repository = "https://github.com/benjaminschulz/ow-lsp-colors"
 
 [language_servers.color-lsp]
 name = "ColorLSP Server"
@@ -33,5 +33,50 @@ languages = [
     "Ruby",
     "Python",
     "Go",
+    "PHP",
+    "Markdown",
+    "C",
+    "C++",
+    "C#",
+    "Java",
+    "Kotlin",
+    "Swift",
+    "Dart",
+    "Elixir",
+    "Elm",
+    "Haskell",
+    "Lua",
+    "Scala",
+    "Zig",
+    "Bash",
+    "Fish",
+    "Shell Script",
+    "SQL",
+    "GraphQL",
+    "Svelte",
+    "Astro",
+    "SCSS",
+    "Less",
+    "Tailwind CSS",
+    "Dockerfile",
+    "Makefile",
+    "Nix",
+    "Terraform",
+    "LaTeX",
+    "Typst",
+    "AsciiDoc",
+    "Clojure",
+    "Erlang",
+    "Gleam",
+    "OCaml",
+    "Racket",
+    "Scheme",
+    "GDScript",
+    "GLSL",
+    "WGSL",
+    "INI",
+    "Env",
+    "Prisma",
+    "Proto",
 ]
 code_action_kinds = []

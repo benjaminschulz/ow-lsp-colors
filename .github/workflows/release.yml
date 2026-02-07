@@ -16,42 +16,42 @@ jobs:
         include:
           - target: x86_64-unknown-linux-gnu
             os: ubuntu-latest
-            name: color-lsp-linux-amd64.tar.gz
+            name: ow-lsp-colors-linux-amd64.tar.gz
             arch: x86_64
 
           - target: aarch64-unknown-linux-gnu
             os: ubuntu-latest
-            name: color-lsp-linux-arm64.tar.gz
+            name: ow-lsp-colors-linux-arm64.tar.gz
             arch: aarch64
 
           - target: x86_64-apple-darwin
             os: macOS-latest
-            name: color-lsp-darwin-amd64.tar.gz
+            name: ow-lsp-colors-darwin-amd64.tar.gz
             arch: x86_64
 
           - target: aarch64-apple-darwin
             os: macOS-latest
-            name: color-lsp-darwin-arm64.tar.gz
+            name: ow-lsp-colors-darwin-arm64.tar.gz
             arch: aarch64
 
           - target: x86_64-pc-windows-msvc
             os: windows-latest
-            name: color-lsp-windows-amd64.zip
+            name: ow-lsp-colors-windows-amd64.zip
             arch: x86_64
 
           - target: x86_64-unknown-linux-musl
             os: ubuntu-latest
-            name: color-lsp-linux-musl-amd64.tar.gz
+            name: ow-lsp-colors-linux-musl-amd64.tar.gz
             arch: x86_64
 
           - target: aarch64-unknown-linux-musl
             os: ubuntu-latest
-            name: color-lsp-linux-musl-arm64.tar.gz
+            name: ow-lsp-colors-linux-musl-arm64.tar.gz
             arch: aarch64
 
           # - target: aarch64-pc-windows-msvc
           #   os: windows-latest
-          #   name: color-lsp-windows-arm64.zip
+          #   name: ow-lsp-colors-windows-arm64.zip
           #   arch: aarch64
 
     runs-on: ${{ matrix.os }}
@@ -99,8 +99,8 @@ jobs:
         if: matrix.os == 'windows-latest'
         run: |
           cd target/${{ matrix.target }}/release
-          strip color-lsp.exe
-          7z a ../../../${{ matrix.name }} color-lsp.exe
+          strip ow-lsp-colors.exe
+          7z a ../../../${{ matrix.name }} ow-lsp-colors.exe
           cd -
 
       - name: Prepare artifacts [Linux & macOS]
@@ -108,22 +108,22 @@ jobs:
         run: |
           cd target/${{ matrix.target }}/release
           # TODO: investigate better cross platform stripping
-          strip color-lsp || true
-          tar czvf ../../../${{ matrix.name }} color-lsp
+          strip ow-lsp-colors || true
+          tar czvf ../../../${{ matrix.name }} ow-lsp-colors
           cd -
 
       - name: Test Bin [Linux & macOS]
         if: matrix.arch == 'x86_64' && matrix.os != 'windows-latest'
         run: |
           cd target/${{ matrix.target }}/release
-          ./color-lsp --version
+          ./ow-lsp-colors --version
           cd -
 
       - name: Test Bin [Windows]
         if: matrix.arch == 'x86_64' && matrix.os == 'windows-latest'
         run: |
           cd target/${{ matrix.target }}/release
-          ./color-lsp.exe --version
+          ./ow-lsp-colors.exe --version
           cd -
 
       - name: Deploy | Upload artifacts

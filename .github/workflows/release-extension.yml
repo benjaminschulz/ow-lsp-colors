@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: huacnlee/zed-extension-action@v1
         with:
-          extension-name: color-highlight
+          extension-name: ow-lsp-colors
           extension-path: extensions/color-highlight
-          push-to: huacnlee/zed-extensions
+          push-to: benjaminschulz/zed-extensions
         env:
           COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}

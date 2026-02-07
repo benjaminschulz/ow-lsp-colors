@@ -97,16 +97,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2fd1289c04a9ea8cb22300a459a72a385d7c73d3259e2ed7dcb2af674838cfa9"
 
 [[package]]
-name = "color-lsp"
-version = "0.2.2"
-dependencies = [
- "csscolorparser",
- "indoc",
- "tokio",
- "tower-lsp",
-]
-
-[[package]]
 name = "crc32fast"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -541,6 +531,16 @@ name = "once_cell"
 version = "1.21.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d"
+
+[[package]]
+name = "ow-lsp-colors"
+version = "0.2.2"
+dependencies = [
+ "csscolorparser",
+ "indoc",
+ "tokio",
+ "tower-lsp",
+]
 
 [[package]]
 name = "parking_lot_core"
